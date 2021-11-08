@@ -29,6 +29,6 @@ while True:
         print('{0}'.format(random.choice(Randomrep_right)))
     else: print('{0} The Answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_2, AlsoRealAnswer_2))
     time.sleep(2)
-    if Answer_1 == RealAnswer_1 or Answer_1 == AlsoRealAnswer_1 and Answer_2 == RealAnswer_2 or Answer_2 == AlsoRealAnswer_2:
+    if Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
         break
 
