@@ -30,5 +30,13 @@ while True:
     else: print('{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_2, AlsoRealAnswer_2))
     time.sleep(2)
     if Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
+        print("You got all of the answers right!")
         break
-
+    elif Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() or Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
+        print("You got 1 answer right.")
+        Replay = input("Do you want to continue? (Y or N): ")
+        if Replay.upper() == "N":
+            break
+#Make this Random↓!!!
+print("See you next time")
+time.sleep(1)
