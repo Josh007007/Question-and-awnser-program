@@ -38,6 +38,5 @@ while True:
         Replay = input("Do you want to continue? (Y or N): ")
         if Replay.upper() == "N":
             break
-#Make this Random↓!!!
 print("See you next time")
 time.sleep(1)
