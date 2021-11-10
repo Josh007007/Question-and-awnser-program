@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 while True:
     Randomrep_wrong = ('I\'m sorry to inform you that you\'re wrong.', 'You almost had it!', 'Try better next time.', 'Error 404: right Answer not found.', 'Keep determined.')
-    Randomrep_right = ('DETERMINATION', 'Good job', 'Was it worth it?', 'Mission complete\nRespect +', 'Bigbrain moment')
+    Randomrep_right = ('DETERMINATION', 'Good job', 'You won...\nBut at what cost?', 'Mission complete\nRespect +', 'Bigbrain moment')
 
     load_dotenv()
     Question_1 = os.getenv('Question_1')
@@ -29,8 +29,9 @@ while True:
         print('{0}'.format(random.choice(Randomrep_right)))
     else: print('{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_2, AlsoRealAnswer_2))
     time.sleep(2)
-    if Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
+    if Answer_1.lower() == RealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower() and Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == AlsoRealAnswer_2.lower():
         print("You got all of the answers right!")
+        time.sleep(1)
         break
     elif Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() or Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
         print("You got 1 answer right.")
