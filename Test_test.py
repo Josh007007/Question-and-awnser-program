@@ -17,7 +17,7 @@ while True:
     if Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower():
         print('{0}'.format(random.choice(Randomrep_right)))
     else: print('{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_1, AlsoRealAnswer_1))
-    time.sleep(2)
+    time.sleep(1.5)
 
     Question_2 = os.getenv('Question_2')
     Answer_2 = input('{0}: '.format(Question_2))
@@ -28,15 +28,25 @@ while True:
     if Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
         print('{0}'.format(random.choice(Randomrep_right)))
     else: print('{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_2, AlsoRealAnswer_2))
-    time.sleep(2)
-    if Answer_1.lower() == RealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower() and Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() and Answer_2.lower() == AlsoRealAnswer_2.lower():
+    time.sleep(1.5)
+
+    Ans_1RealAns_1 = 'Answer_1.lower() == RealAnswer_1.lower()'
+    Ans_1AlsoRealAns_1 = 'Answer_1.lower() == AlsoRealAnswer_1.lower()'
+    Ans_2RealAns_2 = 'Answer_2.lower() == RealAnswer_2.lower()'
+    Ans_2AlsoRealAns_2 = 'Answer_2.lower() == AlsoRealAnswer_2.lower()'
+
+    if eval(Ans_1RealAns_1) and eval(Ans_2RealAns_2) or eval(Ans_1AlsoRealAns_1) and eval(Ans_2RealAns_2) or eval(Ans_2AlsoRealAns_2) and eval(Ans_1RealAns_1) or eval(Ans_1AlsoRealAns_1) and eval(Ans_2AlsoRealAns_2):
         print("You got all of the answers right!")
-        time.sleep(1)
-        break
-    elif Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower() or Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
-        print("You got 1 answer right.")
+        time.sleep(0.5)
         Replay = input("Do you want to continue? (Y or N): ")
         if Replay.upper() == "N":
             break
+    elif eval(Ans_1RealAns_1) or eval(Ans_1AlsoRealAns_1) or eval(Ans_2RealAns_2) or eval(Ans_2AlsoRealAns_2):
+        print("You got 1 answer right.")
+        time.sleep(0.5)
+        Replay = input("Do you want to continue? (Y or N): ")
+        if Replay.upper() == "N":
+            break
+time.sleep(0.6)
 print("See you next time")
 time.sleep(1)
