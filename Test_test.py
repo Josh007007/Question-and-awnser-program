@@ -16,6 +16,8 @@ while True:
 
     if Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower():
         print('\033[1;32;40m{0}'.format(random.choice(Randomrep_right)))
+    elif RealAnswer_1 == AlsoRealAnswer_1: 
+        print('\033[1;31;40m{0} The only answer was: {1}'.format(random.choice(Randomrep_wrong), RealAnswer_1))
     else: print('\033[1;31;40m{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_1, AlsoRealAnswer_1))
     time.sleep(1.5)
 
@@ -27,8 +29,11 @@ while True:
 
     if Answer_2.lower() == RealAnswer_2.lower() or Answer_2.lower() == AlsoRealAnswer_2.lower():
         print('\033[1;32;40m{0}'.format(random.choice(Randomrep_right)))
-    else: print('\033[1;31;40m{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_2, AlsoRealAnswer_2))
-    time.sleep(1.5)
+    elif RealAnswer_2 == AlsoRealAnswer_2: 
+        print('\033[1;31;40m{0} The only answer was: {1}'.format(random.choice(Randomrep_wrong), RealAnswer_2))
+    else:
+        print('\033[1;31;40m{0} The answer was: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_2, AlsoRealAnswer_2))
+        time.sleep(1.5)
 
     Ans_1RealAns_1 = 'Answer_1.lower() == RealAnswer_1.lower()'
     Ans_1AlsoRealAns_1 = 'Answer_1.lower() == AlsoRealAnswer_1.lower()'
@@ -54,6 +59,9 @@ while True:
         Replay = input("\033[1;33;40mDo you want to continue? (Y or N): ")
         if Replay.upper() == "N":
             break
+    else:
+        print("\033[1;31;40mYou got all of the questions wrong, so you're going to get the questions again.")
+        time.sleep(2)
 time.sleep(0.6)
 print("\033[3;30;47mSee you next time", "\033[1;37;40m")
 time.sleep(1)
