@@ -11,6 +11,8 @@ while True:
     Randomrep_wrong = ('I\'m sorry to inform you that you\'re wrong.', 'You almost had it!', 'Try better next time.', 'Error 404: right Answer not found.', 'Keep determined.')
     Randomrep_right = ('DETERMINATION', 'Good job', 'You won...\nBut at what cost?', 'Mission complete\nRespect +', 'Bigbrain moment')
 
+Tip = input('Do you want tips if you got an answer wrong? (Y or N)')
+
     load_dotenv()
     Question_1 = os.getenv('Question_1')
     Answer_1 = input('\033[1;33;40m{0}: '.format(Question_1))
@@ -18,6 +20,7 @@ while True:
 
     RealAnswer_1 = os.getenv('RealAnswer_1')
     AlsoRealAnswer_1 = os.getenv('AlsoRealAnswer_1')
+    Tip_1 = os.getenv('Tip_1')
 
     if Answer_1.lower() == RealAnswer_1.lower() or Answer_1.lower() == AlsoRealAnswer_1.lower():
         print('\033[1;32;40m{0}'.format(random.choice(Randomrep_right)))
@@ -25,6 +28,8 @@ while True:
         time.sleep(1)
     elif RealAnswer_1 == AlsoRealAnswer_1: 
         print('\033[1;31;40m{0} The only answer was: {1}'.format(random.choice(Randomrep_wrong), RealAnswer_1))
+        if Tip.lower() == Y
+        	print(Tip_1)
         time.sleep(1.5)
     else: 
         print('\033[1;31;40m{0} The answers were: {1} or {2}'.format(random.choice(Randomrep_wrong), RealAnswer_1, AlsoRealAnswer_1))
