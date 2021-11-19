@@ -4,6 +4,7 @@ import random
 from dotenv import load_dotenv
 Score_Total = 0
 Score_Max_Total = 0
+Tip = input('Do you want tips if you got an answer wrong? (Y or N): ')
 
 while True:
     Score = 0
@@ -11,7 +12,7 @@ while True:
     Randomrep_wrong = ('I\'m sorry to inform you that you\'re wrong.', 'You almost had it!', 'Try better next time.', 'Error 404: right Answer not found.', 'Keep determined.')
     Randomrep_right = ('DETERMINATION', 'Good job', 'You won...\nBut at what cost?', 'Mission complete\nRespect +', 'Bigbrain moment')
 
-Tip = input('Do you want tips if you got an answer wrong? (Y or N)')
+    
 
     load_dotenv()
     Question_1 = os.getenv('Question_1')
@@ -28,7 +29,7 @@ Tip = input('Do you want tips if you got an answer wrong? (Y or N)')
         time.sleep(1)
     elif RealAnswer_1 == AlsoRealAnswer_1: 
         print('\033[1;31;40m{0} The only answer was: {1}'.format(random.choice(Randomrep_wrong), RealAnswer_1))
-        if Tip.lower() == Y
+        if Tip.upper() == 'Y':
         	print(Tip_1)
         time.sleep(1.5)
     else: 
