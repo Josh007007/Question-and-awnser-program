@@ -15,7 +15,7 @@ while True:
 
 Num_list = []
 Num_Counting = 0
-Num_list_Counting = 0
+Num_list_Counting = 1
 
 while True:
     Num_list.append(Num_Counting)
@@ -38,7 +38,7 @@ while True:
 
         load_dotenv()
         Question = os.getenv(Question)
-        Answer = input('\033[1;33;40m{0}: '.format(Question))
+        Answer = input('\033[1;33;40m{0}:\033[1;37;40m '.format(Question))
         Score_Max += 1
 
         RealAnswer = os.getenv(RealAnswer)
@@ -65,7 +65,7 @@ while True:
     if Score == Score_Max:
         print("\033[1;32;40mYou got all of the answers right!\n{0}% (In total)".format(Score_Prec))
         time.sleep(0.5)
-        Replay = input("\033[1;33;40mDo you want to continue? (Y or N): ")
+        Replay = input("\033[1;33;40mDo you want to continue? (Y or N):\033[1;37;40m ")
         if Replay.upper() == "N":
             break
     elif Score == 0:
@@ -74,9 +74,9 @@ while True:
     else:
         print("\033[1;32;40mYou got {0} answer(s) right out of {1} questions.\n{2}% (In total)".format(Score, Score_Max, Score_Prec))
         time.sleep(0.8)
-        Replay = input("\033[1;33;40mDo you want to continue? (Y or N): ")
+        Replay = input("\033[1;33;40mDo you want to continue? (Y or N):\033[1;37;40m ")
         if Replay.upper() == "N":
             break
 time.sleep(0.6)
-print("\033[3;30;47mSee you next time")
+print("\033[3;30;47mSee you next time\033[1;37;40m")
 time.sleep(1)
