@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 Score_Total = 0
 Score_Max_Total = 0
 Num = int(0)
-Randomrep_wrong = ('I\'m sorry to inform you that you\'re wrong.', 'You almost had it!', 'Try better next time.', 'Error 404: right Answer not found.', 'Keep determined.')
+Randomrep_wrong = ('I\'m sorry to inform you that you\'re wrong.', 'You almost had it!', 'Try better next time.', 'Error 404: right Answer not found.', 'Stay determined.')
 Randomrep_right = ('DETERMINATION', 'Good job', 'You won...\nBut at what cost?', 'Mission complete\nRespect +', 'Bigbrain moment')
 
 while True:
